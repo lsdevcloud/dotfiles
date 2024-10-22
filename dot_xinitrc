@@ -1,13 +1,17 @@
 feh --bg-fill .i3/wallpaper.png &
 
-~/scripts/trackpadconfig.sh &
+# configure trackpad/trackpoint speed
+
+~/scripts/trackpadconfig.sh
+
+# start slstatus
 slstatus & 
 
-# start notification agent
-exec /usr/lib/notification-daemon-1.0/notification-daemon &
+# start notification daemon
+/usr/lib/notification-daemon-1.0/notification-daemon &
 
-# start polkit
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# start gnome polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # start wm
 exec dwm
